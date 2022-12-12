@@ -1,23 +1,48 @@
-import monigota from '../images/monigota.png';
-import '../styles/App.css';
+
 import '../styles/App.scss';
-import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="title">Rellename!</h1>
+    <>
+      <header className="header">
+        <form >
+          <label htmlFor="nameSearch">
+            <input
+              className="form"
+              type="text"
+              name="name"
+              id="nameSearch"
+              placeholder="Search"
+            />
+          </label>
+        </form>
+      </header>
+      <main>
+        <ul className="cards">
+          <li className="card">
+            <div className="card__image-container">
+              <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80"
+              />
+            </div>
+            <div className="card__content">
+              <p className="card__title text--medium">
+                Here's the Title of an Awesome Course
+              </p>
+              <div className="card__info">
+                <p className="text--medium">30 Min</p>
+                <p className="card__price text--medium">Details</p>
+              </div>
+            </div>
+          </li>
 
-      {/* Esto es un comentario */}
+        </ul>
 
-      {/* Esto es otro comentario para avisarte que quites la Monigota */}
-      <img src={monigota} alt="Monigota" />
+      </main>
+      <footer className="footer">
+        <span> &copy;Virginia Menéndez Sordo 2022</span>
+      </footer>
 
-      {/* Aquí va tu código HTML. */}
-      <Routes>
-        <Route path="" element={ } />
-      </Routes>
-    </div>
+    </>
   );
 }
 

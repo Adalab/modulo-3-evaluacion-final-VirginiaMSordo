@@ -1,0 +1,80 @@
+.text--medium {
+    font-family: $font-family;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #ecf0f1;
+}
+
+.cards {
+    grid-column: 2 / span 12;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(auto, 40px));
+    grid-gap: 40px;
+}
+
+.card {
+    grid-column-end: span 4;
+    display: flex;
+    flex-direction: column;
+    background-color: $color-blue;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+}
+
+.card__image-container {
+    width: 100%;
+    padding-top: 56.25%;
+    overflow: hidden;
+    position: relative;
+}
+
+.card__image-container img {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card__content {
+    padding: 20px;
+}
+
+.card__title {
+    margin-bottom: 20px;
+}
+
+.card__info {
+    display: flex;
+    align-self: end;
+    align-items: center;
+}
+
+.card__price {
+    margin-left: auto;
+    padding: 5px 20px;
+    background-color: $color-lightg;
+    border-radius: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+    .card {
+        grid-column-end: span 6;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    main {
+        grid-gap: 20px;
+    }
+
+    .card {
+        grid-column-end: span 12;
+    }
+
+}

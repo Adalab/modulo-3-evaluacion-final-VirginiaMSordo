@@ -1,5 +1,26 @@
 @import 'core/reset';
+@import 'core/variables';
+@import 'layout/header';
+@import 'layout/cards';
+@import 'layout/footer';
 
-/*
-  Aquí puedes poner tu código Sass
-*/
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: $color-dark-1;
+  
+}
+
+main {
+  
+  display: grid;
+  grid-template-columns: 1fr repeat(12, minmax(auto, 60px)) 1fr;
+  grid-gap: 40px;
+  padding: 100px 0;
+}
+

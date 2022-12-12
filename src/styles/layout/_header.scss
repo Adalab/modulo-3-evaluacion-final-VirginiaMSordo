@@ -1,0 +1,48 @@
+.header {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-end;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 100px;
+    background-image: url('../../images/rick.jpg');
+
+    @media all and (min-width: 768px) {
+        height: 200px;
+    }
+
+    @media all and (min-width: 1280px) {
+        height: 300px;
+    }
+}
+
+.form {
+    border: solid 3px $color-green;
+    background-color: $color-light;
+    width: 100%;
+    color: $color-dark-1;
+    font-family: $font-family;
+    font-size: 18px;
+    
+    box-shadow: 0px 0px 14px 9px $color-green;
+
+    @media all and (min-width: 768px) {
+        width: 100%;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &::placeholder {
+        color: $color-dark-1;
+        font-family: $font-family;
+        font-size: 12px;
+
+        @media all and (min-width: 768px) {
+            font-size: 16px;
+        }
+    }
+}
