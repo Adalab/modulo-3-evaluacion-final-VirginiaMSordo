@@ -1,19 +1,27 @@
-// Fichero src/services/api.js
+
 const callToApi = () => {
-    // Llamamos a la API
-    return fetch('https:')
+
+    return fetch('https://rickandmortyapi.com/api/character ')
         .then((response) => response.json())
-        .then((response) => {
-            // Cuando responde la API podemos limpiar los datos aquí
-            const result = {
-                name: response.name,
-                birthYear: response.birth_year,
-                height: response.height,
-                mass: response.mass,
-                eyeColor: response.eye_color,
-            };
-            return result;
-        });
+        .then((data) => {
+
+            const cleanData = data.results.map((user) => {
+                return {
+                    id: user.id,
+                    name: user.name,
+                    status: user.status,
+                    species: user.species,
+                    image: user.image,
+                    planet: user.origin.name,
+                    episode: user.episode.length
+
+                }
+            });
+
+            return cleanData;
+
+        })
+        .catch((error) => console.log(`Ha sucedido un error: ${error}`));
 };
 
 export default callToApi;

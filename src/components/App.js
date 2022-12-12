@@ -1,7 +1,19 @@
-
+import { useEffect, useState } from 'react';
+import callToApi from '../services/api.js';
 import '../styles/App.scss';
 
 function App() {
+
+  const [dataUser, setDataUser] = useState([]);
+
+  useEffect(() => {
+    callToApi().then((data) => {
+      setDataUser(data)
+
+    });
+  }, []);
+  // render every time a usestate change  [useState const]
+
   return (
     <>
       <header className="header">
