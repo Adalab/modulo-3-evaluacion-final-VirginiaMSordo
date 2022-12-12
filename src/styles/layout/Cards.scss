@@ -1,3 +1,5 @@
+@import '../core/variables';
+
 .text--medium {
     font-family: $font-family;
     font-size: 14px;
@@ -9,8 +11,9 @@
 .cards {
     grid-column: 2 / span 12;
     display: grid;
-    grid-template-columns: repeat(12, minmax(auto, 40px));
+    grid-template-columns: repeat(12, minmax(auto, 60px));
     grid-gap: 40px;
+    
 }
 
 .card {
@@ -20,6 +23,7 @@
     background-color: $color-blue;
     cursor: pointer;
     transition: all 0.3s ease 0s;
+    
 }
 
 .card:hover {
@@ -28,17 +32,21 @@
 
 .card__image-container {
     width: 100%;
-    padding-top: 56.25%;
+    padding-top: 60.25%;
     overflow: hidden;
     position: relative;
+    
+    
 }
 
 .card__image-container img {
-    width: 100%;
+    width: 80%;
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
+    
+          
 }
 
 .card__content {
@@ -47,6 +55,8 @@
 
 .card__title {
     margin-bottom: 20px;
+    margin-left: 20px;
+    
 }
 
 .card__info {
@@ -60,8 +70,13 @@
     padding: 5px 20px;
     background-color: $color-lightg;
     border-radius: 20px;
+    border-color: black;
+    cursor: pointer;
+    
 }
-
+.link{
+    text-decoration: none;
+}
 @media only screen and (max-width: 768px) {
     .card {
         grid-column-end: span 6;
@@ -78,5 +93,12 @@
     .card {
         grid-column-end: span 12;
     }
+    .card__title { 
+        font-size: 18px;
+    }
+    .text--medium {
+        font-size: 18px;
+    }
+    
 
 }

@@ -1,7 +1,5 @@
 @import 'core/reset';
 @import 'core/variables';
-@import 'layout/header';
-@import 'layout/cards';
 @import 'layout/footer';
 
 
@@ -13,13 +11,14 @@
 
 body {
   background-color: $color-dark-1;
+  display: flex;
   
 }
 
 main {
   display: grid;
   grid-template-columns: 1fr repeat(12, minmax(auto, 60px)) 1fr;
-  grid-gap: 20px;
+  grid-gap: 40px;
   padding: 100px 0;
 }
 
