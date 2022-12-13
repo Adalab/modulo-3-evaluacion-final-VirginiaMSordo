@@ -5,6 +5,9 @@ const UserList = ({ dataUser }) => {
     const oneUser = dataUser.map((user) => {
         return <UserItem user={user} />;
     });
+
+
+
     return (
 
         <ul className="cards" >

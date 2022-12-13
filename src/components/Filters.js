@@ -1,5 +1,8 @@
-import FilterByName from './FilterByName';
 import '../styles/layout/Filters.scss';
+import FilterByName from './FilterByName';
+import FilerBySpecie from './FilterBySpecie';
+
+
 
 
 function Filters(props) {
@@ -13,7 +16,9 @@ function Filters(props) {
                 <FilterByName
                     handleSearch={props.handleSearch}
                     search={props.search}
+                    dataUser={props.dataUser}
                 />
+                <FilerBySpecie handleFilterBySpecie={props.handleFilterBySpecie} />
             </form>
         </header >
     );

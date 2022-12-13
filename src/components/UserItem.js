@@ -20,7 +20,7 @@ function UserItem(props) {
                     </div>
                 </div>
             </a>
-        </li>
+        </li >
     );
 }
 
