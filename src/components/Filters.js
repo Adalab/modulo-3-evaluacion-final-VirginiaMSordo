@@ -1,4 +1,5 @@
-import '../styles/layout/Filters.scss';
+
+
 import FilterByName from './FilterByName';
 import FilerBySpecie from './FilterBySpecie';
 

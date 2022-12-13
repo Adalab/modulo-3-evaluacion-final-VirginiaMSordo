@@ -3,7 +3,8 @@ import '../styles/App.scss';
 import callToApi from '../services/api.js';
 import UserList from './UserList';
 import Filters from './Filters';
-import NotFound from './NotFound';
+import { Route, Routes } from 'react-router-dom';
+import Detail from './Detail';
 
 
 
@@ -11,7 +12,7 @@ function App() {
 
   const [dataUser, setDataUser] = useState([]);
   const [search, setSearch] = useState('');
-  const [filterBySpecie, setFilterBySpecie] = useState('');
+  const [filterBySpecie, setFilterBySpecie] = useState('all');
 
   useEffect(() => {
     callToApi().then((cleanData) => {
@@ -37,7 +38,15 @@ function App() {
       firstName.name.localeCompare(secondName.name))
     .filter((user) => {
       return filterBySpecie === 'all' ? true : user.species === filterBySpecie
-    });
+    })
+  // .filter((user) => {
+  //   if (filterSearch.length === 0) {
+  //     return <NotFound />;
+  //   } else {
+  //     return filterSearch.includes(user.name)
+  //   }
+
+  // });
 
 
 
@@ -68,7 +77,9 @@ function App() {
       <footer className="footer">
         <span> &copy;Virginia Menéndez Sordo 2022</span>
       </footer>
-
+      <Routes>
+        <Route path="/src/components/Detail.js" element={<Detail />} />
+      </Routes>
     </>
   );
 }

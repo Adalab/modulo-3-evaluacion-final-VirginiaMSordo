@@ -1,3 +1,5 @@
+import '../styles/layout/Filters.scss';
+
 const FilterBySpecie = (props) => {
     const handleChangeSpecie = (ev) => {
         props.handleFilterBySpecie(ev.target.value);

@@ -1,5 +1,5 @@
 import '../styles/layout/Filters.scss';
-import NotFound from './NotFound';
+
 
 function FilterByName(props) {
     const handleName = (ev) => {
