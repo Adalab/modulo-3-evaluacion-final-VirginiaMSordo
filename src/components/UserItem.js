@@ -1,5 +1,6 @@
 import '../styles/layout/Cards.scss';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function UserItem(props) {
     return (
@@ -16,17 +17,23 @@ function UserItem(props) {
                     </p>
                     <div className="card__info">
                         <p className="card__title text--medium">{props.user.species}</p>
-                        <Link to={`user/ ${props.user.id}`} >
-                            <div>
-                                <button className="card__price text--medium">Details</button>
-                            </div>
+
+                        <Link to={`/user/ ${props.user.id}`} >
+
+                            <button className=" card__price text--medium" >Details</button>
+
                         </Link >
+
                     </div>
                 </div>
             </div>
         </li >
-    );
+    )
 }
+UserItem.propypes = {
+    user: PropTypes.object,
+};
+
 
 
 export default UserItem;

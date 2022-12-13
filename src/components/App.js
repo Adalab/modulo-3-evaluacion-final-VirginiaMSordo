@@ -3,8 +3,9 @@ import '../styles/App.scss';
 import callToApi from '../services/api.js';
 import UserList from './UserList';
 import Filters from './Filters';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, } from 'react-router-dom';
 import Detail from './Detail';
+// import NotFound from './NotFound'
 
 
 
@@ -52,6 +53,7 @@ function App() {
 
 
   // CONST
+
   // const renderFilterSearch = () => {
   //   if (filterSearch.length === 0) {
   //     return <NotFound />
@@ -61,25 +63,37 @@ function App() {
   // };
 
 
+  // FUN. ROUTER
+  const idFinder = (id) => {
+    return dataUser.find((user) => user.id === parseInt(id));
+  }
 
 
 
   return (
     <>
-
-      <Filters handleSearch={handleSearch} search={search} handleFilterBySpecie={handleFilterBySpecie} />
-
-      <main>
-        <UserList dataUser={filterSearch}
-        />
-      </main>
-      {/* {renderFilterSearch()} */}
-      <footer className="footer">
-        <span> &copy;Virginia Menéndez Sordo 2022</span>
-      </footer>
       <Routes>
-        <Route path="/src/components/Detail.js" element={<Detail />} />
+        <Route path="/" element={
+          <>
+            <Filters handleSearch={handleSearch} search={search} handleFilterBySpecie={handleFilterBySpecie} />
+
+            <main>
+              <UserList dataUser={filterSearch}
+              />
+
+            </main>
+            {/* {renderFilterSearch()} */}
+
+
+            <footer className="footer">
+              <span> &copy;Virginia Menéndez Sordo 2022</span>
+            </footer>
+          </>
+        } />
+
+        <Route path="/user/:id" element={<Detail idFinder={idFinder}></Detail>} />
       </Routes>
+
     </>
   );
 }

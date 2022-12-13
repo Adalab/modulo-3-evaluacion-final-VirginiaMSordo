@@ -1,30 +1,44 @@
-import { Link } from 'react-router-dom';
 import '../styles/layout/Cards.scss';
+import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 
 function Detail(props) {
+    const params = useParams();
+    const userFound = props.idFinder(params.id);
+
     return (
 
         <article className="card" >
 
             <div className="card__image-container">
-                <img src={props.user.image}
-                    alt={`picture`}
+                <img src={userFound.image}
+
                 />
             </div>
             <div className="card__content">
                 <p className="card__title text--medium">
-                    {props.user.name}
+                    {userFound.name}
                 </p>
                 <div className="card__info">
-                    <p className="card__title text--medium">{props.user.species}</p>
-                    <button className="card__price text--medium">Volver</button>
+                    <p className="card__title text--medium">{userFound.species}</p>
+                    <p className="card__title text--medium">{userFound.status}</p>
+                    <p className="card__title text--medium">{userFound.origin.name}</p>
+                    <Link to={'/'}>
+
+                        <button className=" card__price text--medium" >Details</button>
+
+                    </Link >
                 </div>
             </div>
 
         </article>
     );
 }
-
+Detail.propTypes = {
+    idFinder: PropTypes.func.isRequired,
+};
 
 
 

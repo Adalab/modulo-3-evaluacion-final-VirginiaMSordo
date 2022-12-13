@@ -1,5 +1,6 @@
 import '../styles/layout/Cards.scss';
 import UserItem from './UserItem';
+import PropTypes from 'prop-types';
 
 const UserList = ({ dataUser }) => {
     const oneUser = dataUser.map((user) => {
@@ -17,5 +18,7 @@ const UserList = ({ dataUser }) => {
 
     );
 };
-
+UserList.propTypes = {
+    oneUser: PropTypes.func.isRequired,
+};
 export default UserList;

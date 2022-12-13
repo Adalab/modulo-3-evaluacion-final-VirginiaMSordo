@@ -11,8 +11,9 @@
 .cards {
     grid-column: 2 / span 12;
     display: grid;
-    grid-template-columns: repeat(12, minmax(auto, 60px));
+    grid-template-columns: repeat(12, minmax(auto, 55px));
     grid-gap: 40px;
+    
     
 }
 
@@ -66,7 +67,7 @@
 }
 
 .card__price {
-    margin-left: auto;
+    margin-left: 150px;
     padding: 5px 20px;
     background-color: $color-lightg;
     border-radius: 20px;
@@ -88,6 +89,7 @@
 @media only screen and (max-width: 500px) {
     main {
         grid-gap: 20px;
+        
     }
 
     .card {

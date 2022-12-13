@@ -2,6 +2,7 @@
 
 import FilterByName from './FilterByName';
 import FilerBySpecie from './FilterBySpecie';
+import PropTypes from 'prop-types';
 
 
 
@@ -24,5 +25,7 @@ function Filters(props) {
         </header >
     );
 }
-
+FilterByName.propTypes = {
+    handleSearch: PropTypes.func.isRequired,
+};
 export default Filters;
