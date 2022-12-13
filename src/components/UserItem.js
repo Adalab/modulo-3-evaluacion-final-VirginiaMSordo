@@ -3,10 +3,11 @@ import '../styles/layout/Cards.scss';
 
 function UserItem(props) {
     return (
-        <li className="card" >
-            <a className="link" href="#">
+        <li className="card" key={props.user.id} >
+            <a className="link" href={props.user.id}>
                 <div className="card__image-container">
                     <img src={props.user.image}
+                        alt={`picture`}
                     />
                 </div>
                 <div className="card__content">
