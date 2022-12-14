@@ -8,7 +8,7 @@ This website allows you to find your favorite characters and get more details ab
 ## Developing
 
 The site is developped with HTML, Sass and React JS. Layout with css flex and grid.
-The characters list is fetched from Rick and Morty's API [](https://rickandmortyapi.com/documentation/#get-all-characters)
+The characters list is fetched from Rick and Morty's API [Api] (https://rickandmortyapi.com/documentation/#get-all-characters)
 
 #### `npm `
 
