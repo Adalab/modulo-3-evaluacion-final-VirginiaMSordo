@@ -2,13 +2,22 @@
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import person from '../images/person.png';
+import alien from '../images/alien.png';
 
 
 function Detail(props) {
     const params = useParams();
     const userFound = props.idFinder(params.id);
-    console.log(params);
-    console.log(userFound);
+
+    const imageSpecie = () => {
+        if (userFound.species === 'Human') {
+            return <img className="icon" src={person} alt="species" />;
+        } else if (userFound.species === 'Alien') {
+            return <img className="icon" src={alien} alt="species" />;
+        }
+    };
+
     return (
 
         <article className="card" >
@@ -23,9 +32,9 @@ function Detail(props) {
                     {userFound.name}
                 </p>
                 <div className="card__info">
-                    <p className="card__title text--medium">{userFound.species}</p>
-                    <p className="card__title text--medium">{userFound.status}</p>
-                    <p className="card__title text--medium">{userFound.planet}</p>
+                    <p className="card__title text--medium">Specie {imageSpecie()}</p>
+                    <p className="card__title text--medium"> Status: {userFound.status}</p>
+                    <p className="card__title text--medium">Planet: {userFound.planet}</p>
                     <Link to={'/'}>
 
                         <button className=" card__price text--medium" >Volver</button>

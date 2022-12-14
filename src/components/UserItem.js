@@ -20,7 +20,7 @@ function UserItem(props) {
 
                         <Link to={`/user/${props.user.id}`} >
 
-                            <button className=" card__price text--medium" >Details</button>
+                            <button className=" card__price text--medium" >Detail</button>
 
                         </Link >
 
