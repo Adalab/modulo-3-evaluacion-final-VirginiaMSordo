@@ -13,23 +13,11 @@ body {
   background-color: $color-dark-1;
   display: flex;
   overflow-x: hidden;
-  
-  
-  
-  
 }
 
 main {
-  display: grid;
-  
-  grid-template-columns: 1fr repeat(12, minmax(auto, 60px)) 1fr;
-  grid-gap: 20px;
-  padding: 100px 0;background-size: contain;
-  
-  
-  
-  
-  
+    padding: 100px 0;
+
   
 }
 

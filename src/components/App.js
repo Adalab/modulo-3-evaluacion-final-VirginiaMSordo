@@ -100,6 +100,7 @@ function App() {
               handleSearch={handleSearch}
               search={search}
               handleFilterBySpecie={handleFilterBySpecie}
+              filterBySpecie={filterBySpecie}
               handleFilterByStatus={handleFilterByStatus}
               filterByStatus={filterByStatus}
               handleReset={handleReset}

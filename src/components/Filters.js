@@ -32,7 +32,9 @@ function Filters(props) {
                 <div className='gap'>
                     <fieldset className='fieldset'>
                         <FilerBySpecie
-                            handleFilterBySpecie={props.handleFilterBySpecie} />
+                            handleFilterBySpecie={props.handleFilterBySpecie}
+                            filterBySpecie={props.filterBySpecie}
+                        />
                     </fieldset>
                     <fieldset className='fieldset'>
                         <FilterByStatus
