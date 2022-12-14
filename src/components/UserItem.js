@@ -18,7 +18,7 @@ function UserItem(props) {
                     <div className="card__info">
                         <p className="card__title text--medium">{props.user.species}</p>
 
-                        <Link to={`/user/ ${props.user.id}`} >
+                        <Link to={`/user/${props.user.id}`} >
 
                             <button className=" card__price text--medium" >Details</button>
 
