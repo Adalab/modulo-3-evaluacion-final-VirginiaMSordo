@@ -1,6 +1,6 @@
 # Rick & Morty characters world
 
-[Rick&Morty](https://github.com/Adalab/modulo-3-evaluacion-final-VirginiaMSordo/blob/main/r&m%20readme.jpg?raw=true).
+[Rick&Morty (https://github.com/Adalab/modulo-3-evaluacion-final-VirginiaMSordo/blob/main/r&m%20readme.jpg?raw=true)]
 
 Hello there! I can tell that you are keen to know more about the series characters. Guess what? You are in the right place.
 This website allows you to find your favorite characters and get more details about their story.
