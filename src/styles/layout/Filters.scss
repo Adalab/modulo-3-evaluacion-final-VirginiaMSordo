@@ -21,8 +21,7 @@
 }
 .gap {
     display: flex;
-    justify-content: first baseline;
-    gap: 20px;
+    gap: 5px;
 }
 .form {
     margin-top: 100px;
@@ -59,7 +58,6 @@
         color: $color-dark-1;
         font-family: $font-family;
         font-size: 12px;
-
         @media all and (min-width: 768px) {
             font-size: 16px;
         }
@@ -70,7 +68,7 @@
 
 .form__label {
     font-family: $font-family;
-    margin-right: 10px;
+    margin-right: 5px;
     color: $color-lightg ;
     
     
@@ -85,6 +83,7 @@
 // filterByStatus
 .check_input {
     cursor: pointer;
+    margin-left: 5px;
     
     
 }
@@ -92,3 +91,9 @@
    color:$color-blue ;
 }
 
+// reset
+.reset {
+    cursor: pointer;
+    gap: 10px;
+    margin-left: 5px;
+}

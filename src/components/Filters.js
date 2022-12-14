@@ -13,6 +13,11 @@ function Filters(props) {
         ev.preventDefault();
     };
 
+    const handleResetBtn = (ev) => {
+        ev.preventDefault();
+        props.handleReset();
+    };
+
     return (
         <header className="header">
             <form className="form" action='' onSubmit={handleSubmit} >
@@ -34,8 +39,13 @@ function Filters(props) {
                             handleFilterByStatus={props.handleFilterByStatus}
                             filterByStatus={props.filterByStatus}
                         />
+
                     </fieldset>
+                    <button className="reset" onClick={handleResetBtn}>
+                        Reset
+                    </button>
                 </div>
+
             </form>
         </header >
     );

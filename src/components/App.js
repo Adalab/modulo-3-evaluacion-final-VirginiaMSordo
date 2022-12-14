@@ -1,18 +1,19 @@
-import { useEffect, useState } from 'react';
 import '../styles/App.scss';
+import { useEffect, useState } from 'react';
 import callToApi from '../services/api.js';
+import ls from '../services/localStorage';
+import { Route, Routes, } from 'react-router-dom';
 import UserList from './UserList';
 import Filters from './Filters';
-import { Route, Routes, } from 'react-router-dom';
 import Detail from './Detail';
-// import NotFound from './NotFound'
+import NotFound from './NotFound'
 
 
 
 function App() {
 
   const [dataUser, setDataUser] = useState([]);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState(ls.get('search', ''));
   const [filterBySpecie, setFilterBySpecie] = useState('all');
   const [filterByStatus, setFilterByStatus] = useState([]);
 
@@ -24,6 +25,7 @@ function App() {
 
   // HANDLES
   const handleSearch = (name) => {
+    ls.set('search', name);
     setSearch(name);
   };
 
@@ -59,25 +61,25 @@ function App() {
     })
 
 
-  // .filter((user) => {
-  //   if (filterSearch.length === 0) {
-  //     return <NotFound />;
-  //   } else {
-  //     return filterSearch.includes(user.name)
-  //   }
 
-  // });
+  // CONST
 
-
-  // const renderFilterSearch = () => {
-  //   if (filterSearch.length === 0) {
-  //     return <NotFound />
-  //   } else {
-  //     return <UserList dataUser={filterSearch} />
-  //   }
-  // };
+  const renderFilterSearch = () => {
+    if (filterSearch.length === 0) {
+      return <NotFound />
+    } else {
+      return <UserList dataUser={filterSearch} />
+    }
+  };
 
 
+  // RESET
+  const handleReset = () => {
+    setSearch('');
+    setFilterBySpecie('all');
+    setFilterByStatus([]);
+    ls.clear();
+  };
 
 
 
@@ -100,15 +102,16 @@ function App() {
               handleFilterBySpecie={handleFilterBySpecie}
               handleFilterByStatus={handleFilterByStatus}
               filterByStatus={filterByStatus}
+              handleReset={handleReset}
             />
 
             <main>
-              <UserList
+              {/* <UserList
                 dataUser={filterSearch}
-              />
-
+              /> */}
+              {renderFilterSearch()}
             </main>
-            {/* {renderFilterSearch()} */}
+
 
 
             <footer className="footer">

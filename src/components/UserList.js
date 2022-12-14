@@ -4,7 +4,7 @@ import UserItem from './UserItem';
 
 const UserList = ({ dataUser }) => {
     const oneUser = dataUser.map((user) => {
-        return <UserItem user={user} />
+        return <UserItem key={user.id} user={user} />
 
     });
 
