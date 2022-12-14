@@ -14,6 +14,7 @@ function App() {
   const [dataUser, setDataUser] = useState([]);
   const [search, setSearch] = useState('');
   const [filterBySpecie, setFilterBySpecie] = useState('all');
+  const [filterByStatus, setFilterByStatus] = useState([]);
 
   useEffect(() => {
     callToApi().then((cleanData) => {
@@ -30,6 +31,19 @@ function App() {
     setFilterBySpecie(value)
   };
 
+  const handleFilterByStatus = (value) => {
+    if (filterByStatus.includes(value)) {
+      const checkedStatus = filterByStatus.filter(
+        (oneStatus) => oneStatus !== value
+      );
+
+      setFilterByStatus(checkedStatus);
+    } else {
+      const checkedStatus = [...filterByStatus, value];
+
+      setFilterByStatus(checkedStatus);
+    }
+  };
 
   // FILTERS
   const filterSearch = dataUser
@@ -40,6 +54,11 @@ function App() {
     .filter((user) => {
       return filterBySpecie === 'all' ? true : user.species === filterBySpecie
     })
+    .filter((user) => {
+      return filterByStatus.length === 0 ? true : filterByStatus.includes(user.status);
+    })
+
+
   // .filter((user) => {
   //   if (filterSearch.length === 0) {
   //     return <NotFound />;
@@ -50,10 +69,6 @@ function App() {
   // });
 
 
-
-
-  // CONST
-
   // const renderFilterSearch = () => {
   //   if (filterSearch.length === 0) {
   //     return <NotFound />
@@ -63,11 +78,15 @@ function App() {
   // };
 
 
+
+
+
+
+
   // FUN. ROUTER
   const idFinder = (id) => {
     return dataUser.find((user) => user.id === parseInt(id));
   }
-
 
 
   return (
@@ -75,10 +94,17 @@ function App() {
       <Routes>
         <Route path="/" element={
           <>
-            <Filters handleSearch={handleSearch} search={search} handleFilterBySpecie={handleFilterBySpecie} />
+            <Filters
+              handleSearch={handleSearch}
+              search={search}
+              handleFilterBySpecie={handleFilterBySpecie}
+              handleFilterByStatus={handleFilterByStatus}
+              filterByStatus={filterByStatus}
+            />
 
             <main>
-              <UserList dataUser={filterSearch}
+              <UserList
+                dataUser={filterSearch}
               />
 
             </main>

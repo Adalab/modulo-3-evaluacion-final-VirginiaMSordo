@@ -2,6 +2,7 @@
 
 import FilterByName from './FilterByName';
 import FilerBySpecie from './FilterBySpecie';
+import FilterByStatus from './FilterByStatus';
 import PropTypes from 'prop-types';
 
 
@@ -14,13 +15,27 @@ function Filters(props) {
 
     return (
         <header className="header">
-            <form action='' onSubmit={handleSubmit} >
-                <FilterByName
-                    handleSearch={props.handleSearch}
-                    search={props.search}
-                    dataUser={props.dataUser}
-                />
-                <FilerBySpecie handleFilterBySpecie={props.handleFilterBySpecie} />
+            <form className="form" action='' onSubmit={handleSubmit} >
+
+                <fieldset className='fieldset'>
+                    <FilterByName
+                        handleSearch={props.handleSearch}
+                        search={props.search}
+                        dataUser={props.dataUser}
+                    />
+                </fieldset>
+                <div className='gap'>
+                    <fieldset className='fieldset'>
+                        <FilerBySpecie
+                            handleFilterBySpecie={props.handleFilterBySpecie} />
+                    </fieldset>
+                    <fieldset className='fieldset'>
+                        <FilterByStatus
+                            handleFilterByStatus={props.handleFilterByStatus}
+                            filterByStatus={props.filterByStatus}
+                        />
+                    </fieldset>
+                </div>
             </form>
         </header >
     );

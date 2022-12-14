@@ -12,7 +12,7 @@ function FilterByName(props) {
     return (
         <label htmlFor="nameSearch">
             <input
-                className="form"
+                className="form__search"
                 type="text"
                 name="name"
                 id="name"
