@@ -3,11 +3,76 @@
 
 .error_message{
     display: flex;
+    flex-direction: column;
     margin-right: 100px;
     padding-bottom: 50px;
     color: $color-lightg;
     font-size: 20px;
+    font-weight: bold;
+    animation-name: parpadeo;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
     
+        -webkit-animation-name: parpadeo;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+    }
+    
+    @-moz-keyframes parpadeo {
+        0% {
+            opacity: 1.0;
+        }
+    
+        50% {
+            opacity: 0.0;
+        }
+    
+        100% {
+            opacity: 1.0;
+        }
+    }
+    
+    @-webkit-keyframes parpadeo {
+        0% {
+            opacity: 1.0;
+        }
+    
+        50% {
+            opacity: 0.0;
+        }
+    
+        100% {
+            opacity: 1.0;
+        }
+    }
+    
+    @keyframes parpadeo {
+        0% {
+            opacity: 1.0;
+        }
+    
+        50% {
+            opacity: 0.0;
+        }
+    
+        100% {
+            opacity: 1.0;
+        }
+    }
+    
+        
+    
+    
+
+.found {
+     width: 350px;
+    justify-content: center;
+    margin-left: 170px;
+    margin-top: 20px;
+    border-radius: 30px;
+    overflow-x: hidden;
 }
 .item1 {
     padding-left: 150px;

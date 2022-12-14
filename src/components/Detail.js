@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import person from '../images/person.png';
 import alien from '../images/alien.png';
+import NotFound from './NotFound';
 
 
 function Detail(props) {
@@ -18,34 +19,41 @@ function Detail(props) {
         }
     };
 
-    return (
+    if (userFound !== undefined) {
+        return (
 
-        <article className="card" >
+            <article className="card" >
 
-            <div className="card__image-container">
-                <img src={userFound.image}
+                <div className="card__image-container">
+                    <img src={userFound.image}
 
-                />
-            </div>
-            <div className="card__content">
-                <p className="card__title text--medium">
-                    {userFound.name}
-                </p>
-                <div className="card__info">
-                    <p className="card__title text--medium">Specie {imageSpecie()}</p>
-                    <p className="card__title text--medium"> Status: {userFound.status}</p>
-                    <p className="card__title text--medium">Planet: {userFound.planet}</p>
-                    <Link to={'/'}>
-
-                        <button className=" card__price text--medium" >Volver</button>
-
-                    </Link >
+                    />
                 </div>
-            </div>
+                <div className="card__content">
+                    <p className="card__title text--medium">
+                        {userFound.name}
+                    </p>
+                    <div className="card__info">
+                        <p className="card__title text--medium">Specie {imageSpecie()}</p>
+                        <p className="card__title text--medium"> Status: {userFound.status}</p>
+                        <p className="card__title text--medium">Planet: {userFound.planet}</p>
+                        <Link to={'/'}>
 
-        </article>
-    );
+                            <button className=" card__price text--medium" >Go Back</button>
+
+                        </Link >
+                    </div>
+                </div>
+
+            </article>
+        );
+    } else {
+        return <NotFound />;
+    }
 }
+
+
+
 Detail.propTypes = {
     idFinder: PropTypes.func.isRequired,
 };

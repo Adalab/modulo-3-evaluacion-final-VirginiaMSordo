@@ -21,7 +21,7 @@ function App() {
     callToApi().then((cleanData) => {
       setDataUser(cleanData)
     });
-  }, []);            //if render every time a usestate change  [useState const]
+  }, []);
 
   // HANDLES
   const handleSearch = (name) => {
@@ -116,7 +116,8 @@ function App() {
 
 
             <footer className="footer">
-              <span> &copy;Virginia Menéndez Sordo 2022</span>
+              <a className="linkedin" href="https://www.linkedin.com/in/vicky-men%C3%A9ndez/"><span> &copy;Virginia Menéndez Sordo 2022 Linkedin profile</span></a>
+
             </footer>
           </>
         } />
